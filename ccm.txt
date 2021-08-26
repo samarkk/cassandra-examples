@@ -1,0 +1,7 @@
+ccm create -v 3.11.10 -n 3 my_cluster --vnodes
+ccm status
+ccm start
+ccm node1 status
+ccm node1 ring
+ccm node1 ring | cut -d ' ' -f 1 | grep '127.0.0.1' | wc -l
+ccm add node4 -i 127.0.0.4 -j 7400
